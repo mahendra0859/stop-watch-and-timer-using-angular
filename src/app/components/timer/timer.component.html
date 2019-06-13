@@ -1,0 +1,74 @@
+<div class="main">
+  <h2>Timer</h2>
+  <div class="container"  >
+      <div class="row" id="timer">
+          <div class="col-md-8 col-md-offset-2"  *ngIf="!start"  (click)="allowChange()" >
+               <div class="marginClass">
+                         <span  class="large" *ngIf="arr[5]" [class.dark]='arr[5]'>{{arr[5]}}</span>
+                          <span class="large"  *ngIf="!arr[5]">0</span>
+                          <span class="large" *ngIf="arr[4]" [class.dark]='arr[4]'>{{arr[4]}}</span> 
+                           <span class="large"  *ngIf="!arr[4]">0</span>   
+                          <span  class="medium"  [class.dark]='arr[4]'>h</span>
+                  </div>
+                  
+                 <div class="marginClass">
+                       <span class="large"  *ngIf="arr[3]" [class.dark]='arr[3]'>  {{arr[3]}}</span >
+                       <span class="large"  *ngIf="!arr[3]">0</span>
+                        <span class="large"  *ngIf="arr[2]" [class.dark]='arr[2]'>  {{arr[2]}}</span >
+                         <span class="large"  *ngIf="!arr[2]">0</span>
+                       <span class="medium" [class.dark]='arr[2]'>m</span>
+                 </div>
+                 
+                 <div class="marginClass">
+                        <span class="large"  *ngIf="arr[1]" [class.dark]='arr[1]'>  {{arr[1]}}</span >
+                         <span class="large"  *ngIf="!arr[1]">0</span>
+                        <span class="large"  *ngIf="arr[0]" [class.dark]='arr[0]'>  {{arr[0]}}</span >
+                         <span class="large"  *ngIf="!arr[0]">0</span>
+                        <span class="large"  [class.border]="makeChange"></span>
+                        <span class="medium"  [class.dark]='arr[0]'>s</span> 
+                 </div> 
+  
+               
+          </div>
+          
+          
+  
+          <div class="col-md-6 " *ngIf="start">
+                 <div class="marginClass">
+                         <span *ngIf="hour>0" class="large dark">{{hr}}</span>  
+                          <span  *ngIf="hour>0" class="medium dark">h</span>
+                  </div>
+                  
+                 <div class="marginClass">
+                       <span *ngIf="minute>0 || hour>0" class="large dark">  {{min}}</span >
+                       <span *ngIf="minute>0 || hour>0" class="medium dark">m</span>
+                 </div>
+                 
+                 <div class="marginClass">
+                      <span class="large dark">   {{sec}}</span> 
+                      <span class="medium dark">s</span> 
+                 </div> 
+  
+                
+          </div>
+           <div class="col-md-5 col-md-offset-1" *ngIf="start" >
+                  <canvas #tCanvas  > </canvas>
+              
+          </div>
+  
+           <div class="col-md-8  col-md-offset-2" >
+                <div class="controlButtons">
+                  <button class="btn btn-primary" *ngIf="!start" (click)="onStart()"><strong>Start</strong></button> 
+                  <button class="btn btn-primary"  *ngIf="start" (click)="pause ? onResume():onPause()"><strong>{{btnText}}</strong></button>
+                  <button class="btn btn-default" (click)="reset()"><strong>Reset</strong></button>
+              </div>
+           </div>    
+  
+      </div>
+  </div>
+  
+</div>
+
+
+
+    

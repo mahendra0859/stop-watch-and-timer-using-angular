@@ -1,0 +1,56 @@
+<div class="main">
+  <h1 id="name">Stop Watch</h1>
+  <div class="container">
+    <div class="row" >
+        <div class="col-md-8 col-md-offset-2" id="stopwatch">
+            <div >
+                <div class="marginClass">
+                       <span  class="large">{{hr}}</span>  
+                        <span  class="medium">hr</span>
+                        <span class="large">:</span>
+                </div>
+                
+               <div class="marginClass">
+                     <span  class="large">  {{min}}</span >
+                     <span  class="medium">min</span>
+                     <span class="large">:</span>
+               </div>
+               
+               <div class="marginClass">
+                    <span class="large">   {{sec}}</span> 
+                    <span class="medium">sec</span> 
+                    <span class="large">:</span>
+               </div> 
+                
+                <div class="marginClass">
+                    <span class="small"  *ngIf="millisecond<10">0</span>
+                    <span class="small">   {{msec}}</span>
+                    <span class="medium">ms</span> 
+                    
+                </div>         
+            </div>    
+ 
+            <div class="controlButtons">
+                 <button class="btn btn-primary" *ngIf="!start" (click)="onStart()"><strong>Start</strong></button>
+                <button class="btn btn-primary" *ngIf="start" (click)=" pause ? onResume():onPause()"><strong>{{btnText}}</strong></button>
+                <button class="btn btn-success" (click)="onLap()"><strong>Lap</strong></button>
+                <button class="btn btn-warning" (click)="reset()"><strong>Reset</strong></button>
+                
+            </div>
+
+        </div>
+    </div><br>
+    <div class="row" >
+        <div class="col-md-8 col-md-offset-2">
+          <div id="lap">
+
+          </div>
+          
+      </div>
+</div>
+
+</div>
+
+
+
+    

@@ -1,0 +1,46 @@
+#name{
+    text-align: center;
+
+}
+#stopwatch{
+    border:1px solid rgb(200,200,200);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Istok Web', sans-serif;
+    width: 80%;
+    
+}
+.large{
+    font-size: 100px;
+    margin: 5px;
+    
+}
+.medium{
+    font-size: 40px;
+}
+.small{
+    font-size: 60px;
+}
+
+.controlButtons{
+    text-align: center;
+}
+.marginClass{
+    margin: 5px;
+    display: inline-block;
+    
+}
+#lap{
+    border:1px solid rgb(200,200,200);
+    padding: 20px;
+    border-radius: 5px;    
+    font-family: 'Istok Web', sans-serif;
+}
+.marginClassLap{
+    margin: 5px;
+    display: inline-block;
+    
+}
+.smallLap{
+    font-size: 30px;
+}
